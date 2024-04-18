@@ -1,0 +1,24 @@
+#hello nahom
+#This is a pyhon prompting code that has two defined functions i hope you like it
+def count_vowels(sentence):#the counting function
+    vowel_count = 0#intitialization
+    vowels = {
+        'a': ['a', 'A'],#
+        'e': ['e', 'E'],
+        'i': ['i', 'I'],
+        'o': ['o', 'O'],
+        'u': ['u', 'U']
+    }
+    for char in sentence:
+        if char.lower() in vowels:
+            vowel_count += 1
+    return vowel_count
+
+def main():
+    prompt_input = input("Please enter your Sentence: ")
+    print("You entered:", prompt_input)
+    total_vowel = count_vowels(prompt_input)
+    print("Number of vowels in the Sentence:", total_vowel)
+
+if __name__ == "__main__":
+    main()
