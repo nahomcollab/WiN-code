@@ -1,24 +1,20 @@
 #hello nahom
-#This is a pyhon prompting code that has two defined functions i hope you like it
+#This is a pyhon prompting code which i used a regular expression to find all the patterns 
+#and count the vowels i hope you like it!
+import re
 def count_vowels(sentence):#the counting function
-    vowel_count = 0#intitialization
-    vowels = {
-        'a': ['a', 'A'],#
-        'e': ['e', 'E'],
-        'i': ['i', 'I'],
-        'o': ['o', 'O'],
-        'u': ['u', 'U']
-    }
-    for char in sentence:
-        if char.lower() in vowels:
-            vowel_count += 1
+    vowel_count=0
+    pattern = "[AEIOUaeiou]"# Regular expressions
+    result= re.findall(pattern,sentence)
+    
+    for char in result:
+      vowel_count=vowel_count+1
     return vowel_count
 
 def main():
-    prompt_input = input("Please enter your Sentence: ")
+    prompt_input = input("Please enter your Sentence: ")#The user prompt that will ask the user to input a text
     print("You entered:", prompt_input)
     total_vowel = count_vowels(prompt_input)
-    print("Number of vowels in the Sentence:", total_vowel)
-
+    print("Number of vowels in the Sentence:", total_vowel)#Total number of vowels
 if __name__ == "__main__":
     main()
